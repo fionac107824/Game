@@ -4,15 +4,15 @@ HEIGHT = 400
 score = 0
 game_over = False
 
-fox = Actor("fox")
-fox.pos = 100, 100
+bunny = Actor("bunny")
+bunny.pos = 100, 100
 
 coin = Actor("coin")
 coin.pos = 200, 200
 
 def draw():
     screen.fill((173, 216, 230 ))
-    fox.draw()
+    bunny.draw()
     coin.draw()
     screen.draw.text("Score: " + str(score), color="black" , topleft=(10, 10))
 
@@ -35,15 +35,15 @@ def update():
     global score
 
     if keyboard. left:
-        fox.x = fox.x - 2
+        bunny.x = bunny.x - 2
     elif keyboard.right:
-        fox.x = fox.x + 2
+        bunny.x = bunny.x + 2
     elif keyboard.up:
-        fox.y = fox.y - 2
+        bunny.y = bunny.y - 2
     elif keyboard.down:
-        fox.y = fox.y + 2
+        bunny.y = bunny.y + 2
 
-    coin_collected = fox.colliderect(coin)
+    coin_collected = bunny.colliderect(coin)
 
     if coin_collected:
         score = score + 10
